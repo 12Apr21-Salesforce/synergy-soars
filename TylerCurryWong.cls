@@ -124,25 +124,8 @@
      * Return false if not balanced
     */
     public static Boolean bracketsAreBalanced( String s ) {
-        for(int x = 0; x < s.size(); i++){
-		if(s.charAt(x) == '(' || s.charAt(x) == '{' || s.charAt(x) == '['){
-			arrayBrac.add(Character.toString(s.charAt(x)));
-		}
-		else if(s.charAt(x) == ')' || s.charAt(x) == '}' || s.charAt(x) == ']'){
-			if(al.size() != 0 && arrayBrac.get(arrayBrac.size()-1).equals('(') && s.charAt(x) == ')'){
-				arrayBrac.remove(arrayBrac.size()-1);
-			}
-			else if(arrayBrac.size() != 0 && arrayBrac.get(arrayBrac.size()-1).equals('{') && s.charAt(i) == '}'){
-				arrayBrac.remove(arrayBrac.size()-1);
-			}
-			else if(arrayBrac.size() != 0 && arrayBrac.get(arrayBrac.size()-1).equals('[') && s.charAt(i) == ']'){
-				arrayBrac.remove(arrayBrac.size()-1);
-			}else{
-				return result = 'NO';
-			}
-		}return arrayBrac;
-    }ArrayList<String> arrayBrac = new ArrayList<String>('{','(',')','}',']','[');
-    system.debug(bracketsAreBalanced(s));
+
+    }
 
     /* You should NOT be submitting answers that you find online. You will be expected to be able to defend any of these solutions without notice. */
 
