@@ -1,0 +1,230 @@
+    //Lead off your class with the following comment, filled out with 
+    //your information.
+
+    /////////////////////////////////////////////////////////////////
+    //
+    // Name: Coding Challenges
+    // Author: tyler.currywong@revature.net
+    // Date: 04/23/2021
+    // Description: Series of apex methods to demonstrate
+    // basic understanding of coding concepts.
+    //
+    /////////////////////////////////////////////////////////////////
+
+    //Write the following methods in a class called P0B. 
+    //Note: The method signatures are given.
+    public class TylerCurryWong{
+    /*
+     * 1. Return the nth Fibonacci number
+     * Test Cases:
+     * Input: 0     Output: 0
+     * Input: 1    Output: 1
+     * Input: 2     Output: 1
+     * Input: 10    Output: 55
+    */
+    public static Integer nFibonacci(Integer n){
+        Integer nth, b = 0, c = 1;
+        n = 10;
+        Integer a = 0;
+        for (nth = 1; nth <= n; nth++){
+            a = b;
+            b = c;
+            c = a + b;
+            System.debug(a + ' ');
+        }
+        return a;
+    }System.debug(nFibonacci(10));
+    
+
+    /*
+     * 2. Sort a list of integers.
+     * Test Cases:
+     * Input: [2,4,5,1,3,1]     Output: [1,1,2,3,4,5]
+     * Input: [5,4,3,2,1]     Output: [1,2,3,4,5]
+     *
+     * Don't use the sort() method... that would be lame.
+    */
+    public static List<Integer> sortList(List<Integer> intList) {
+        for(Integer a = 0; a < newList.size(); a++){
+            for(Integer b = a+1; b < newList.size(); b++){
+                Integer numa = newList[a];
+                Integer numb = newList[b];
+                if(numa > numb){
+                    newList[a] = numb;
+                    newList[b] = numa;
+                }
+            } 
+        }
+        for(Integer a:newList){
+            system.debug(''+a);
+        }return newList;
+    }List<Integer> newList = new List<Integer>{2,4,5,1,3,1};
+	system.debug(sortList(newList));
+
+    /*
+     * 3. Return the factorial of n.
+     * Test Cases:
+     * Input: 0    Output: 1
+     * Input: 1    Output: 1
+     * Input: 3    Output: 6
+    */
+    public static Integer nFactorial(Integer n) {
+        Integer fib = 1;
+        n=10;
+        for(Integer i = 1; i <= n; i ++){
+            if(n == 0){
+                fib = 1;
+            }else{
+                fib = fib * i;
+                //System.debug(fib+'');
+            }
+        }
+        System.debug(fib+'');
+        return n;
+    }
+    System.debug(nFactorial(10));
+
+    /*
+     * 4. Rotate left
+     * Given a list, list, and an integer, n, rotate the values in list left n times and return list
+     * Test Cases:
+     * Input: [1,2,3,4,5], 1    Output: [2,3,4,5,1]
+     * Input: [1,2,3,4,5], 6    Output: [2,3,4,5,1]
+     * Input: [1,2,3,4,5], 3    Output: [4,5,1,2,3]
+    */
+    public static List<Integer> rotateLeftNTimes(List<Integer> nList, Integer n) {
+        n=5;
+        for (Integer i = 0; i < n; i++) {
+            for (Integer j = moveList.size() - 1; j > 0; j--) {
+                Integer temp = moveList[j];
+                moveList[j] = moveList[j - 1];
+                moveList[j - 1] = temp;
+            }
+        }return moveList;
+    }List<Integer> moveList = new List<Integer>{1,2,3,4,5};
+	system.debug(rotateLeftNTimes(moveList, 5));
+
+    /*
+     * 5. Balanced Brackets
+     * A bracket is any one of the following: (, ), {, }, [, or ]
+     * 
+     * The following are balanced brackets:
+     *    ( )
+     *    ( ) ( )
+     *    ( ( ) )
+     *    ( { [ ] } )
+     *
+     * The following are NOT balanced brackets:
+     *   (
+     *   )
+     *   ( ( )
+     *   ( [ ) ]
+     *
+     * Return true if balanced
+     * Return false if not balanced
+    */
+    public static Boolean bracketsAreBalanced( String s ) {
+        for(int x = 0; x < s.length(); i++){
+		if(s.charAt(x) == '(' || s.charAt(x) == '{' || s.charAt(x) == '['){
+			arrayBrac.add(Character.toString(s.charAt(x)));
+		}
+		else if(s.charAt(x) == ')' || s.charAt(x) == '}' || s.charAt(x) == ']'){
+			if(al.size() != 0 && arrayBrac.get(arrayBrac.size()-1).equals('(') && s.charAt(x) == ')'){
+				arrayBrac.remove(arrayBrac.size()-1);
+			}
+			else if(arrayBrac.size() != 0 && arrayBrac.get(arrayBrac.size()-1).equals('{') && s.charAt(i) == '}'){
+				arrayBrac.remove(arrayBrac.size()-1);
+			}
+			else if(arrayBrac.size() != 0 && arrayBrac.get(arrayBrac.size()-1).equals('[') && s.charAt(i) == ']'){
+				arrayBrac.remove(arrayBrac.size()-1);
+			}else{
+				return result = 'NO';
+			}
+		}return arrayBrac;
+    }ArrayList<String> arrayBrac = new ArrayList<String>('{','(',')','}',']','[');
+    system.debug(bracketsAreBalanced(s));
+
+    /* You should NOT be submitting answers that you find online. You will be expected to be able to defend any of these solutions without notice. */
+
+    /*
+     * 6. Create a method that retrieves a list of all accounts and updates those accounts.
+     *      Create a custom field on the Account standard object called Size__c that will be a 
+     * picklist containing small/medium/large.
+     *     Create a method that retrieves a list of all accounts. 
+     *         - If an account has between 1-1000 employees then it is classified as small.
+     *         - If an account has between 1001-10000 employees it is classified as medium.
+    *         - If an account has more than 10000 employees it is classified as large.
+     *     Update the Size__c field on each account to reflect the amount of employees in the Account.
+    */
+    public static void updateAccountSize( ) {
+
+    }
+
+    /* 
+     * 7. Create a method that will find all leads that contain 'ca' in their fields. 
+     *     If a lead is located in California(CA), change their Lead Status field to 'Closed - Not 
+     * Converted' and their description should display the message, "We are no longer doing 
+     * business in California."
+     */
+    public static void updateCALeads( ) {
+
+    }
+
+    /*
+     * 8. Create a method that will find all Opportunities which have already passed their Close Date 
+     * and have a Stage field that is not 'Closed Won'. Since they have passed their Close Date and 
+     * they are not marked as 'Closed Won', they should be marked as 'Closed Lost'.
+     */
+    public static void closePastDueOpportunities( ) {
+
+    }
+
+    /*  
+     *  9. questionMarks declares the str parameter, which can have numbers, letters, and question marks.
+     *  It will then check str to see if there are exactly 3 question marks between every pair of two numbers that add up to 10.
+     *   If there are, questionMarks returns true. In any other case (including the case where str doesn't contain any two numbers that sum to 10),
+     *   questionMarks will return false.
+     *
+     *   For example, when given the String "arrb6???4b5???ef5", questionMarks returns true because there are 3 question marks between 6 and 4 and
+     *   another 3 question marks between 5 and 5 (and both pairs of numbers sum to 10).
+     *
+     *  Other examples:
+     *      str = "aa6?9" => questionMarks returns false
+     *      str = "a?7??s?3r1?????5" => questionMarks returns true because there's at least one pair of numbers that sum to 10 (7 and 3) and 3
+     *          question marks between those numbers
+    */
+    public static Boolean questionMarks(String str) {
+    }
+
+    /*
+     *   10. multipleCounter returns the number of multiples of the Integer n that exist in the inclusive range [firstNum, secondNum].
+     *   You can assume that firstNum < secondNum in all cases.
+     *
+     *   Examples:
+     *       firstNum = 1, secondNum = 6, n = 5 => multipleCounter returns 1 because there is one multiple of 5 in the range [1, 6] (which is 5)
+     *       firstNum = 2, secondNum = 12, n = 2 => multipleCounter returns 6 because there are 6 multiples of 2 in the range [2, 12] 
+     *          (which are 2, 4, 6, 8, 10, and 12)
+    */
+    public static Integer multipleCounter(Integer firstNum, Integer secondNum, Integer n) {
+    }
+    
+    /*
+     *   11. palindromicity declares a parameter str and returns the degree of palindromicity for that string - i.e. the smallest possible number
+     *   of palindromes needed to construct the string.
+     *
+     *   Examples:
+     *      str = "a" => palindromicity returns 1 because "a" backwards is "a"
+     *      str = "b3b" => palindromicity returns 1 because "b3b" backwards is "b3b"
+     *
+     *      str = "ty" => palindromicity returns 2 because str can be broken into two 1 letter palindromes ("t" and "y")
+     *      str = "343hmh" => palindromicity returns 2 because str can be broken into two 3 letter palindromes ("343" and "hmh")
+     *
+     *      str = "iotoihannahracecar" => palindromicity returns 3 because str can be broken into 3 palindromes ("iotoi", "hannah", and "racecar")
+     *      str = "abcbabcbabab" => 2. pretty sure it's greedy
+     *      str = "abcbabcbababa" => 3. both ways: "abcbabcba" "bab" "a" or "ababa" "bcbabcb" "a"
+     *      str = "ababbbabbababa" => 4. NOT GREEDY. 'a' 'babbbab' 'b' 'ababa' is the answer. 
+     *                                    'aba' 'bbb' 'abba' 'b' 'aba' is the greedy answer.
+    */
+    public static Integer palindromicity(String str) {
+    }
+    }
