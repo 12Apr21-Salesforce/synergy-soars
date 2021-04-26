@@ -95,10 +95,10 @@
     public static List<Integer> rotateLeftNTimes(List<Integer> nList, Integer n) {
         n=5;
         for (Integer i = 0; i < n; i++) {
-            for (Integer j = moveList.size() - 1; j > 0; j--) {
+            for (Integer j = 0; j < moveList.size() - 1; j++) {
                 Integer temp = moveList[j];
-                moveList[j] = moveList[j - 1];
-                moveList[j - 1] = temp;
+                moveList[j] = moveList[j + 1];
+                moveList[j + 1] = temp;
             }
         }return moveList;
     }List<Integer> moveList = new List<Integer>{1,2,3,4,5};
