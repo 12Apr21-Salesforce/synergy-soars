@@ -140,7 +140,16 @@
      *     Update the Size__c field on each account to reflect the amount of employees in the Account.
     */
     public static void updateAccountSize( ) {
-
+	List<Account> sizeaccount = [SELECT Id, NumberOfEmployees, Size__c FROM Account WHERE NumberOfEmployees > 0];
+        for(Account x: sizeaccount){
+            if(x.NumberOfEmployees < 1001){
+                x.Size__c = 'small';
+            }else if(x.NumberOfEmployees > 1000 && x.NumberOfEmployees < 10001){
+                x.Size__c = 'medium';
+            }else {
+                x.Size__c = 'large';
+            }
+        }update sizeaccount;
     }
 
     /* 
