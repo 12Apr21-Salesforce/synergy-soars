@@ -164,7 +164,7 @@
                 }else if(x[i] == ')'){
                     if(x[(x.size()-1)-i]=='('){
                         validate = validate;
-                    }else if (x[i+1]=='('){
+                    }else if (x[i-1]=='('){
                         validate = validate;
                     }else{
                         validate = false;
@@ -172,7 +172,7 @@
                 }else if(x[i] == '}'){
                     if(x[(x.size()-1)-i]=='{'){
                         validate = validate;
-                    }else if (x[i+1]=='{'){
+                    }else if (x[i-1]=='{'){
                         validate = validate;
                     }else{
                         validate = false;
@@ -180,7 +180,7 @@
                 }else if(x[i] == ']'){
                     if(x[(x.size()-1)-i]=='['){
                         validate = validate;
-                    }else if (x[i+1]=='['){
+                    }else if (x[i-1]=='['){
                         validate = validate;
                     }else{
                         validate = false;
