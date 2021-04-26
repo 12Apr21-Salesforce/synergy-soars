@@ -26,7 +26,7 @@
         Integer nth, b = 0, c = 1;
         n = 10;
         Integer a = 0;
-        for (nth = 1; nth <= n; nth++){
+        for (nth = 0; nth <= n; nth++){
             a = b;
             b = c;
             c = a + b;
