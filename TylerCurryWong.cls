@@ -124,7 +124,7 @@
      * Return false if not balanced
     */
     public static Boolean bracketsAreBalanced( String s ) {
-        for(int x = 0; x < s.length(); i++){
+        for(int x = 0; x < s.size(); i++){
 		if(s.charAt(x) == '(' || s.charAt(x) == '{' || s.charAt(x) == '['){
 			arrayBrac.add(Character.toString(s.charAt(x)));
 		}
