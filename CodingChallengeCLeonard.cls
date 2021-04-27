@@ -303,10 +303,20 @@ public with sharing class CodingChallengeCLeonard {
 
         Integer counter = 0;
 
+        // for (Integer index1 = 0; index1 < str.length(); index1++) {
+        //     for (Integer index2 = index1+1; index2 <= str.length(); index2++) {
+        //         if (str.substring(index1, index2) == str.substring(index1, index2).reverse()) {
+        //             counter++;
+        //         }
+        //     }
+        // }
+
         for (Integer index1 = 0; index1 < str.length(); index1++) {
-            for (Integer index2 = index1+1; index2 <= str.length(); index2++) {
+            for (Integer index2 = str.length(); index2 >= index1; index2--) {
                 if (str.substring(index1, index2) == str.substring(index1, index2).reverse()) {
                     counter++;
+                    index1 = index2 + 1;
+                    break;
                 }
             }
         }
